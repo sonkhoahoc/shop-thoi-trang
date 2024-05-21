@@ -1,8 +1,8 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, OneToMany, ManyToOne } from 'typeorm';
 import { Product_Image } from './Product_Image';
-import { Product_Size } from './Product_SIze';
 import { Brand } from './Brand';
 import { Supplier } from './Supplier';
+import { Product_Size } from './Product_Size';
 
 
 @Entity()
@@ -34,11 +34,11 @@ export class Product {
     @Column()
     avatar: string;
 
-    @OneToMany(() => Product_Size, product_size => product_size.product)
-    product_size: Product_Size[];
-
     @OneToMany(() => Product_Image, product_image => product_image.product)
     images: Product_Image[];
+
+    @OneToMany(() => Product_Size, product_size => product_size.product)
+    product_size: Product_Size
 
     @ManyToOne(() => Brand, brand => brand.products)
     brand: Brand;

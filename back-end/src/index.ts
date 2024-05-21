@@ -6,6 +6,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import { createConnection } from 'typeorm';
+import connectionOptions from './database/connectDB';
 
 dotenv.config()
 
@@ -21,7 +22,7 @@ app.get('/', (req: Request, res: Response) => {
     res.send('Hello World!');
 })
 
-createConnection().then(() => {
+createConnection(connectionOptions).then(() => {
     app.listen(port, () => {
         console.log(`Server is running on port ${port}`);
     });

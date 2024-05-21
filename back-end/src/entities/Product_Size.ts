@@ -1,8 +1,9 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, ManyToOne } from 'typeorm';
-import { Product } from './Product';
-import { Size } from './Size';
+import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Product } from "./Product";
+import { Size } from "./Size";
 
 @Entity()
+
 export class Product_Size {
     @PrimaryGeneratedColumn()
     id: number;
@@ -14,5 +15,8 @@ export class Product_Size {
     product: Product;
 
     @ManyToOne(() => Size, size => size.product_size)
-    size: Size;
+    sizes: Size;
+
+    @CreateDateColumn({ type: 'timestamp' })
+    date_added: Date;
 }
