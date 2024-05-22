@@ -9,7 +9,7 @@ export class Category_Product{
     name: string;
 
     @Column()
-    paren_id: number;
+    parent_id: number;
 
     @CreateDateColumn({ type: 'timestamp' })
     date_added: Date;
