@@ -1,7 +1,7 @@
 import express, { Application, Request, Response } from 'express';
 import swaggerUI from 'swagger-ui-express';
 import router from "./routes/Router";
-import swaggerDocument from '../swagger-output.json';
+import swaggerDocument from '../swagger_output.json';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';

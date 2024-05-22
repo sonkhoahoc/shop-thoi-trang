@@ -13,7 +13,8 @@ const doc = {
     },
     host: 'localhost:3001',
     basePath: '/api/v1',
-    schemes: [],
+    schemes: ['http'],
+    apis: ['./routes/*.route.ts'],
 }
 
 swaggerAutogen(outputFile, endpointsFiles, doc)

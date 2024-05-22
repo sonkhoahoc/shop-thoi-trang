@@ -9,9 +9,6 @@ export class Brand {
     @Column()
     name: string;
 
-    @OneToMany(() => Product, products => products.brand)
-    products: Product[];
-
     @CreateDateColumn({ type: 'timestamp' })
     date_added: Date;
 }
